@@ -1,0 +1,249 @@
+body {
+	table.booked-calendar {
+		th,
+		td {
+			font-family: @primary-font-font-family;
+		}
+
+		td {
+			&.today {
+				&:hover .date .number {
+					border-color: @accent-color-6;
+					background-color: @accent-color-7;
+					color: @accent-color-6;
+				}
+
+				.date {
+					background: @accent-color-5;
+
+					.number {
+						background: none;
+						color: @accent-color-6;
+						border: solid 1px @accent-color-6;
+					}
+				}
+			}
+		}
+
+		.booked-appt-list {
+			padding: 30px 0px 0px;
+			font-size: 14px;
+
+			h2 {
+				margin: 0 15px 20px;
+				font-family: @h3-font-family;
+				text-align: center;
+			}
+
+			.timeslot {
+				.timeslot-time {
+					font-size: 12px;
+					font-weight: 600;
+					line-height: 30px;
+					padding: 12px 10px 12px 15px;
+					width: 30%;
+					color: #555;
+				}
+
+				.timeslot-count {
+					width: 35%;
+				}
+
+				.timeslot-people {
+					width: 35%;
+					padding-top: 9px;
+
+					button {
+						border-color: transparent;
+						padding: 10px 14px !important;
+
+						&[disabled] span {
+							color: inherit;
+						}
+					}
+				}
+
+				&:last-child {
+					border-bottom: solid 5px @accent-color-7;
+					margin: 0px;
+				}
+			}
+		}
+	}
+
+	.booked-calendarSwitcher.calendar {
+		margin: 15px auto auto auto;
+		text-align: center;
+		width: 100%;
+		padding: 0px 20px;
+		color: @accent-color-6;
+		border-radius: 0px;
+		background: none !important;
+
+		select {
+			padding: 5px;
+			font-size: 14px;
+			min-width: 200px;
+			max-width: 180px;
+			border-radius: 0px;
+			color: @accent-color-6;
+			vertical-align: top;
+			background-color: @accent-color-8 !important;
+			border: solid 1px #ccc !important;
+		}
+
+		p i.fa {
+			color: @accent-color-1;
+			margin: 1px 8px 0 0;
+			font-size: 18px;
+		}
+	}
+
+	.booked-spinner {
+		width: auto !important;
+		height: auto !important;
+		top: 10px !important;
+		right: 10px !important;
+		bottom: 10px !important;
+		left: 10px !important;
+		min-height: 100px;
+
+		&:after {
+			content: url("@{theme-images-dir}loader-ring.gif");
+			position: absolute;
+			top: calc( ~"50% - 35px" );
+			left: calc( ~"50% - 35px" );
+			background: @accent-color-5;
+			border-radius: 100%;
+			width: 70px;
+			height: 70px;
+		}
+
+		> div {
+			display: none;
+		}
+	}
+
+	.booked-modal {
+		.bm-overlay {
+			background: rgb(255,255,255);
+		}
+
+		.bm-window {
+			border-radius: 0px;
+			background: @accent-color-5;
+			box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+
+			p {
+				margin: 0 0 25px;
+				font-size: 14px;
+				line-height: 18px;
+
+				small {
+					margin: 0 0 30px;
+					color: @accent-color-6;
+					text-transform: none;
+					font: normal 30px/22px @h3-font-family !important;
+				}
+			}
+		}
+
+		input[type=submit],
+		button {
+			.button-gen-simple-border(@accent-color-4);
+		}
+	}
+
+	.booked-form {
+		.field {
+			input[type=text],
+			input[type=password],
+			input[type=tel],
+			input[type=email]{
+				border-radius: 0px;
+				border-color: @accent-color-4;
+				transition: all .3s;
+			}
+
+			input:hover {
+				border-color: @accent-color-1
+			}
+
+			label.field-label {
+				font: 100 16px/20px @primary-font-font-family;
+			}
+
+			select {
+				padding: 5px;
+			}
+
+			.required-asterisk {
+				margin: -2px 0 0 6px;
+				font-size: 8px;
+				vertical-align: middle;
+			}
+
+			.checkbox-radio-block {
+				padding: 0 0 10px 5px;
+			}
+		}
+	}
+
+	#booked-profile-page,
+	table.booked-calendar,
+	.booked-modal {
+		input[type=submit],
+		button {
+			.button-gen-simple-border(@accent-color-4);
+			line-height: 1em;
+			&:hover {
+				.button-gen-hover-simple-border(@accent-color-6);
+			}
+		}
+	}
+
+	#booked-profile-page input[type=submit].button-primary,
+	table.booked-calendar input[type=submit].button-primary,
+	.booked-modal input[type=submit].button-primary,
+	table.booked-calendar .booked-appt-list .timeslot .timeslot-people button {
+		.button-gen-simple-border(@accent-color-1);
+
+		&:hover {
+			.button-gen-hover-simple-border(@accent-color-6);
+			background: @accent-color-6 !important;
+			border-color: @accent-color-6 !important;
+		}
+	}
+}
+
+// attempt to match every Booked wrapping element
+[class*="booked-"] {
+	.fa-arrow-right,
+	.fa-arrow-left,
+	.fa-remove,
+	.fa-close,
+	.fa-times,
+	.fa-refresh {
+		&:before {
+			font-family: 'theme';
+		}
+	}
+
+	.fa-remove:before,
+	.fa-close:before,
+	.fa-times:before {
+		content: icon(theme-icon-close);
+	}
+
+	.fa-arrow-right:before {
+		content: icon(theme-arrow-right22);
+	}
+
+	.fa-arrow-left:before {
+		content: icon(theme-arrow-left22);
+	}
+
+	.fa-refresh:before {
+		content: icon(theme-refresh);
+	}
+}

@@ -1,0 +1,52 @@
+.main-footer {
+	.mc4wp-form {
+		padding-top: 10px;
+		padding-bottom: 20px;
+
+		input,
+		textarea,
+		select {
+			padding: 12px 14px !important;
+			transition: all .3s;
+			margin: 0px;
+			background: none;
+			font-size: 14px;
+			line-height: 18px;
+			height: 46px;
+			border-color: rgba(255, 255, 255, 0.3);
+			color: @accent-color-8;
+		}
+
+		input[type=email] {
+			width: 190px;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		input:hover,
+		textarea:hover {
+			border: 1px solid @accent-color-1;
+		}
+
+		input:hover {
+			border-right-color: transparent;
+		}
+
+		input[type=submit]{
+			font-size: 10px;
+			letter-spacing: 1px;
+			line-height: 1em;
+			color: #fff;
+			vertical-align: top;
+			padding: 1em 1.4em;
+			border: solid 1px @accent-color-1;
+			background: transparent;
+			text-transform: uppercase;
+			font-weight: 600;
+
+			&:hover {
+				background: @accent-color-1 !important;
+			}
+		}
+	}
+}

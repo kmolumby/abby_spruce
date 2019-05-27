@@ -1,0 +1,151 @@
+#scroll-to-top,
+#toggle-style-switcher {
+	display: block;
+	width  : 25px !important;
+	height : 22px !important;
+	line-height: 22px !important;
+	font-size  : 20px !important;
+	padding    : 4px;
+	margin-left: 2px;
+	font-family: "icomoon";
+
+	text-align: center;
+	cursor: pointer;
+	z-index: 9998;
+	border: none !important;
+	position: relative;
+
+	background: @accent-color-1;
+	text-shadow: 0 -1px 0 darken(@accent-color-1, 10%);
+	color: @accent-color-8 !important;
+	border-radius: 1px 0 0 1px;
+
+	&:hover {
+		padding-right: 6px;
+		text-decoration: none;
+		margin-left: 0;
+		color: @accent-color-8 !important;
+	}
+}
+
+#style-switcher {
+	position: fixed !important;
+	z-index: 900000 !important;
+	top: @header-height + 70px;
+	left: 0;
+	right: auto;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	#toggle-style-switcher {
+		position: absolute;
+		top: 0;
+		right: -35px !important;
+		border-radius: 0 1px 1px 0;
+		margin-left: 0;
+		margin-right: 2px;
+
+		&:after {
+			border-right-color: @accent-color-1 !important;
+		}
+
+		&:before {
+			content: icon(theme-brush);
+			font-family: theme;
+		}
+
+		&:hover {
+			padding-right: 4px;
+		}
+	}
+
+	&.open #toggle-style-switcher,
+	&:hover #toggle-style-switcher {
+		padding-left: 6px !important;
+		margin-right: 0 !important;
+		opacity: 1;
+	}
+
+	body.admin-bar & {
+		top: @header-height + 70px + 33px;
+	}
+}
+
+
+/*--------------------------------------------------------------------------
+Meta Icons + Feedback + Scroll to Top
+--------------------------------------------------------------------------*/
+
+/* Scroll to Top */
+#scroll-to-top {
+	position: fixed;
+	z-index: -1;
+	opacity: 0;
+	bottom: 15px;
+	right: 10px;
+	width: 30px !important;
+	height: 30px !important;
+	line-height: 28px !important;
+	font-size: 20px !important;
+	padding: 4px;
+	margin-left: 0px;
+	border: solid 1px @accent-color-1 !important;
+	background: transparent;
+	text-shadow: none;
+	color: @accent-color-1 !important;
+	border-radius: 50%;
+	transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	&:hover {
+		opacity: 0;
+		padding: 4px;
+		background: @accent-color-1;
+		border-color: @accent-color-1;
+	}
+
+	&.visible {
+		opacity: 1;
+		z-index: 200;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.post-siblings a {
+	@height: 100px;
+
+	position: fixed;
+	top: 50%;
+	display: block;
+	width: 25px;
+	padding: 0 15px;
+	height: @height;
+	background: @accent-color-5;
+	margin-top: -@height/2;
+	text-align: center;
+	color: @h1-color;
+	font-size: 25px;
+	line-height: @height;
+	transition: all .15s ease-out;
+	border: solid 1px @accent-color-7;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	&:hover {
+		background: @accent-color-1;
+		border-color: @accent-color-1;
+		color: @accent-color-5;
+	}
+
+	&[rel="prev"] {
+		left: 0;
+	}
+
+	&[rel="next"] {
+		right: 0;
+	}
+}

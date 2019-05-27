@@ -1,0 +1,239 @@
+.vamtam-cubeportfolio {
+	.cbp-nav-next,
+	.cbp-nav-prev {
+		border-radius: 0 !important;
+	}
+
+	&.cbp-slider-edge {
+		&.vamtam-cube-narrow {
+			.cbp-nav {
+				display: none;
+			}
+
+			.cbp-wrapper {
+				position: relative;
+				margin: auto;
+			}
+		}
+
+		.cbp-nav-prev,
+		.cbp-nav-next {
+			color: @body-link-regular;
+			background: @accent-color-8;
+			width: 44px;
+			height: 44px;
+			text-align: center;
+			transition: all .3s;
+			box-shadow: 0 2px 3px 0px rgba(0,0,0,0.1);
+
+			&:after {
+				font-size: 24px;
+				line-height: 32px;
+				width: 32px;
+				height: 32px;
+				font-style: normal;
+				background: none;
+				font-family: theme;
+			}
+
+			&:hover {
+				color: @accent-color-1;
+				opacity: 1;
+			}
+		}
+
+		.cbp-nav-prev {
+			left: 10px;
+
+			&:after {
+				content: icon(theme-arrow-left22);
+			}
+		}
+
+		.cbp-nav-next {
+			right: 10px;
+
+			&:after {
+				content: icon(theme-arrow-right22);
+			}
+		}
+
+		.cbp-nav-pagination {
+			bottom: -40px;
+		}
+
+		.cbp-nav-pagination-item {
+			width: 12px;
+			height: 12px;
+			opacity: 0.2;
+			border: 1px solid #0f0f0f;
+		}
+
+		.cbp-nav-pagination-active {
+			background: @accent-color-1 ;
+			border-color: @accent-color-1;
+			opacity: 1;
+		}
+	}
+
+	.cbp-slider-inline {
+		.cbp-slider-next,
+		.cbp-slider-prev {
+			background: none;
+			color: @accent-color-8;
+			float: none;
+			position: absolute;
+			left: 50px;
+			top: 0px;
+
+			&:after {
+				font-size: 32px;
+				line-height: 32px;
+				width: 32px;
+				height: 32px;
+				font-style: normal;
+				background: none;
+				font-family: theme;
+			}
+
+			&:hover {
+				color: @accent-color-8;
+			}
+		}
+
+		.cbp-slider-next {
+			left: auto;
+			right: 50px;
+
+			&:after {
+				content: icon(theme-arrow-right22);
+			}
+		}
+
+		.cbp-slider-prev:after {
+			content: icon(theme-arrow-left22);
+		}
+	}
+
+	.cbp-slider-controls {
+		bottom: 85px;
+		left: 0;
+		top: auto;
+		z-index: 10;
+		position: relative;
+		width: 100%
+	}
+
+	.cbp-item {
+		&:hover {
+			.cbp-slider-prev,
+			.cbp-slider-next {
+				color: @accent-color-1;
+			}
+		}
+
+		.format-gallery:hover {
+			.cbp-slider-prev,
+			.cbp-slider-next {
+				color: @accent-color-8;
+			}
+		}
+	}
+
+	+ .thumbnails {
+		.cbp-pagination-item {
+			border: solid 1px @accent-color-8;
+			transition: all .4s ease-out;
+
+			&:after {
+				background: rgba(255, 255, 255, 0.5);
+			}
+
+			&.cbp-pagination-active,
+			&:hover {
+				border-color: @accent-color-1;
+
+				&:after {
+					background: transparent;
+				}
+			}
+		}
+	}
+}
+
+.vamtam-cubeportfolio.cbp,
+.cbp-lazyload,
+.cbp-popup-loadingBox,
+.cbp-popup-singlePageInline {
+	&:after {
+		-webkit-animation: none;
+		animation: none;
+		border: 0;
+		content: url("@{theme-images-dir}loader-ring.gif");
+		height: 70px;
+	}
+}
+
+.cbp-popup-wrap {
+	&.cbp-popup-singlePage {
+		.cbp-popup-content {
+			max-width: 1200px;
+
+			article.type-jetpack-portfolio .portfolio-image-wrapper {
+				max-width: 1090px;
+				margin: auto;
+			}
+		}
+	}
+
+	.cbp-popup-lightbox-img,
+	.cbp-popup-lightbox-iframe iframe {
+		box-shadow: none;
+	}
+}
+
+body .cbp-popup-singlePage { // keep the body selector, increases the specificity
+	.cbp-popup-navigation-wrap {
+		background-color: @accent-color-8;
+		border-bottom: solid 1px @accent-color-7;
+	}
+
+	.cbp-popup-singlePage-counter {
+		color: @accent-color-4;
+	}
+
+	.cbp-popup-next,
+	.cbp-popup-prev,
+	.cbp-popup-close {
+		background: none !important;
+
+		&:after {
+			transition: all .5s;
+			font-family: 'theme';
+			font-size: 2.6em;
+			vertical-align: middle;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			color: @accent-color-1;
+			display: block;
+			width: 50px;
+			height: 45px;
+			padding-top: 5px;
+		}
+
+		&:hover:after {
+			color: @accent-color-6;
+		}
+	}
+
+	.cbp-popup-close:after {
+		content: icon(theme-icon-close);
+		font-size: 2.4em;
+	}
+	.cbp-popup-next:after {
+		content: icon(theme-arrow-right22);
+	}
+	.cbp-popup-prev:after {
+		content: icon(theme-arrow-left22);
+	}
+}

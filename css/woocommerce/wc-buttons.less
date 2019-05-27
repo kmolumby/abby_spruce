@@ -1,0 +1,88 @@
+.woocommerce {
+	// all buttons' selectors must be here
+	#commentform .form-submit input,
+	#respond #commentform .form-submit input[type="submit"],
+	.add_review a.button,
+	#payment #place_order {
+		.button-gen-common-simple();
+	}
+
+
+	// button type 2, "normal" state
+	#commentform .form-submit input,
+	#respond #commentform .form-submit input[type="submit"],
+	.add_review a.button,
+	#payment #place_order {
+		.button-gen-simple-border(@accent-color-1);
+	}
+
+	// "hover" state for both type 1 and type 2 buttons
+	#commentform .form-submit input,
+	#respond #commentform .form-submit input[type="submit"],
+	.add_review a.button,
+	#payment #place_order {
+		.button-gen-hover-simple-border(@accent-color-6);
+	}
+
+	&.woocommerce-cart .cart-collaterals .button {
+		.button-gen-simple-border(@accent-color-4);
+		color: @accent-color-2;
+		font-size: 11px;
+	}
+	&.woocommerce-cart .cart-collaterals .checkout-button{
+		.button-gen-simple-border(@accent-color-1);
+		margin-right: 0px;
+	}
+
+	.button.ajax_add_to_cart {
+		&:focus {
+			outline: none !important;
+		}
+
+		&:not(.added):focus .icon,
+		&:after {
+			color: @accent-color-1;
+		}
+
+		.icon {
+			color: @body-link-regular;
+		}
+
+		&.added {
+			&:after {
+				display: inline-block;
+				height: 35px;
+				line-height: 35px;
+				vertical-align: top;
+			}
+
+			+ .added_to_cart {
+				padding-top: 10px;
+				vertical-align: top;
+				line-height: 35px;
+			}
+		}
+		&:hover {
+			.icon {
+				color: @body-link-hover;
+			}
+		}
+	}
+}
+
+// catch-all for all other WC buttons
+body.woocommerce .page-wrapper {
+	#submit,
+	.button {
+		.button-gen-common-simple();
+		.button-gen-simple-border(@accent-color-1);
+		.button-gen-hover-simple-border(@accent-color-6);
+
+		border-radius: 0;
+		text-transform: uppercase;
+	}
+
+	.products .button {
+		border: none;
+	}
+}

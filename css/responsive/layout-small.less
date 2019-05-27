@@ -1,0 +1,193 @@
+@media (max-width: 479px) {
+	.responsive-layout {
+		.page-header {
+			h1 {
+				line-height: 1.2em;
+				font-size: 24px;
+			}
+
+			.desc {
+				text-align: center;
+				padding: 0 20px;
+			}
+		}
+
+		.post-article {
+			header {
+				h3 {
+					&, a {
+						font-size: 1.3em;
+						padding-top: 0;
+					}
+				}
+			}
+		}
+
+		.wpv-grid.has-background {
+			background-position: center center !important;
+			background-attachment: scroll !important;
+		}
+
+		.loop-wrapper.news {
+			.post-actions-wrapper {
+				bottom: -4px;
+
+				.icon {
+					margin-right: 4px;
+					font-size: 11px;
+				}
+
+				.post-date {
+					text-transform: none;
+					margin-right: 0;
+					line-height: 2em;
+					font-size: 0.6em;
+					width: 100%;
+					text-align: center;
+					padding: 0px;
+				}
+			}
+
+			.comment-count {
+				width: 25%;
+
+				a {
+					padding: 5px;
+					text-align: center;
+				}
+			}
+		}
+
+		.loop-wrapper .list-item .post-content-outer {
+			padding: 0;
+			margin-bottom: 0;
+		}
+
+		.post-content-wrapper {
+			background: none;
+			h3 {
+
+				&, a {
+					font-size: 15px;
+				}
+			}
+		}
+
+		header.main-header {
+			&.layout-logo-menu .first-row .logo-wrapper .logo img {
+				max-width: 120px;
+			}
+
+			&.layout-logo-text-menu .first-row-left .logo-wrapper .logo img {
+				max-width: 120px !important;
+			}
+		}
+
+		&.woocommerce {
+			table.cart {
+				td,
+				th {
+					font-size: 10px;
+
+					&.product-price {
+						display: none;
+					}
+				}
+
+				td.product-name a {
+					font-size: 13px;
+				}
+			}
+
+			.comment-form-author,
+			.comment-form-email {
+				width: 100%;
+				display: block;
+			}
+
+			.comment-form-email {
+				float: none;
+			}
+
+			.woocommerce .products.vamtam-wc .product {
+				.price del span,
+				.price ins span,
+				span.amount {
+					font-size: 16px;
+				}
+
+				.price {
+					margin-top: -30px;
+
+					del span {
+						padding: 0px;
+
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+
+		&.single-post .related-posts {
+			padding-top: 0px;
+		}
+
+		.related-content-title {
+			margin: 40px 10px 30px 10px;
+		}
+
+		.comment {
+			.comment-content {
+				margin-left: 10px;
+			}
+
+			.comment-author {
+				display: none;
+			}
+		}
+
+		&.page-template-guestbook-php .comments .comment {
+			padding: 0px;
+		}
+
+		#commentform .form-submit {
+			margin: 0px;
+		}
+
+		h3 .vamtam-button {
+			margin-top: 20px;
+		}
+
+		.linkarea table td {
+			display: block;
+		}
+
+		.booked-modal .bm-window {
+			padding: 25px;
+
+			p {
+				&.name {
+					font-size: 14px;
+					line-height: 22px;
+				}
+
+				small {
+					font-size: 26px !important;
+				}
+			}
+		}
+
+		#sb_instagram {
+			&.sbi_col_3,
+			&.sbi_col_4,
+			&.sbi_col_5,
+			&.sbi_col_6 {
+				#sbi_images .sbi_item {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
